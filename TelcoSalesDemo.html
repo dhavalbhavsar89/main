@@ -44,15 +44,8 @@
       margin-bottom: 24px;
     }
 
-    .topbar h1 {
-      margin: 0;
-      font-size: 30px;
-    }
-
-    .topbar p {
-      margin: 8px 0 0;
-      color: var(--muted);
-    }
+    .topbar h1 { margin: 0; font-size: 30px; }
+    .topbar p { margin: 8px 0 0; color: var(--muted); }
 
     .pill {
       background: var(--primary-soft);
@@ -60,7 +53,6 @@
       border-radius: 999px;
       padding: 10px 14px;
       font-weight: bold;
-      white-space: nowrap;
     }
 
     .layout {
@@ -69,10 +61,7 @@
       gap: 24px;
     }
 
-    .column {
-      display: grid;
-      gap: 24px;
-    }
+    .column { display: grid; gap: 24px; }
 
     .card {
       background: var(--panel);
@@ -82,67 +71,12 @@
       padding: 20px;
     }
 
-    .card h2 {
-      margin: 0 0 16px;
-      font-size: 18px;
-    }
-
-    .grid {
-      display: grid;
-      gap: 14px;
-    }
-
-    .grid.two {
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-    }
-
-    .field label {
-      display: block;
-      margin-bottom: 6px;
-      font-size: 12px;
-      text-transform: uppercase;
-      letter-spacing: 0.04em;
-      color: var(--muted);
-      font-weight: bold;
-    }
-
-    .field input,
-    .field select,
-    .field textarea {
-      width: 100%;
-      border: 1px solid var(--border);
-      border-radius: 10px;
-      padding: 11px 12px;
-      font-size: 14px;
-      color: var(--text);
-      background: #fff;
-    }
-
-    .field textarea {
-      min-height: 110px;
-      resize: vertical;
-    }
-
-    .tag-row {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-    }
-
-    .tag {
-      padding: 9px 12px;
-      border-radius: 999px;
-      background: #f3f6fb;
-      border: 1px solid var(--border);
-      font-size: 13px;
-      color: var(--text);
-    }
+    .card h2 { margin: 0 0 16px; font-size: 18px; }
 
     .availability,
     .plans,
     .devices,
-    .summary,
-    .timeline {
+    .summary {
       display: grid;
       gap: 12px;
     }
@@ -162,7 +96,6 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
-      gap: 16px;
     }
 
     .badge {
@@ -175,102 +108,38 @@
     .live { background: #e8f8ee; color: var(--success); }
     .review { background: #fff4e5; color: var(--warning); }
     .focus { background: #f1ebff; color: var(--accent); }
-    .inactive { background: #fdecec; color: var(--danger); }
 
     .plan-card h3,
-    .device-card h3 {
-      margin: 0 0 8px;
-      font-size: 17px;
-    }
+    .device-card h3 { margin: 0 0 8px; }
 
-    .plan-price {
-      font-size: 26px;
-      font-weight: bold;
-      margin: 10px 0 8px;
-    }
+    .plan-price { font-size: 26px; font-weight: bold; }
 
-    .subtle {
-      color: var(--muted);
-      font-size: 13px;
-      line-height: 1.5;
-    }
+    .subtle { color: var(--muted); font-size: 13px; }
 
-    ul {
-      margin: 10px 0 0 18px;
-      padding: 0;
-      color: var(--text);
-    }
-
-    li { margin-bottom: 6px; }
-
-    .actions {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      margin-top: 16px;
-    }
+    .actions { display: flex; gap: 10px; margin-top: 16px; }
 
     button {
       border: 0;
       border-radius: 10px;
       padding: 11px 14px;
-      font-size: 14px;
       font-weight: bold;
       cursor: pointer;
     }
 
-    .primary-btn {
-      background: var(--primary);
-      color: #fff;
-    }
+    .primary-btn { background: var(--primary); color: #fff; }
+    .secondary-btn { background: #edf2f8; }
 
-    .secondary-btn {
-      background: #edf2f8;
-      color: var(--text);
-    }
-
-    .total {
-      background: #eef5ff;
-      border-color: #c8d9ff;
-      font-weight: bold;
-      font-size: 16px;
-    }
-
-    .timeline-item {
-      border-left: 3px solid var(--primary);
-      padding-left: 12px;
-    }
-
-    .timeline-item strong {
-      display: block;
-      margin-bottom: 4px;
-    }
-
-    .timeline-item span {
-      color: var(--muted);
-      font-size: 13px;
-    }
+    .total { background: #eef5ff; font-weight: bold; }
 
     .highlight {
       background: linear-gradient(135deg, #eef4ff, #f7f2ff);
       border: 1px solid #d7ddff;
       border-radius: 14px;
       padding: 14px;
-      color: var(--text);
-      line-height: 1.55;
-      font-size: 14px;
     }
 
     @media (max-width: 1024px) {
-      .layout,
-      .grid.two {
-        grid-template-columns: 1fr;
-      }
-
-      .topbar {
-        flex-direction: column;
-        align-items: flex-start;
-      }
+      .layout { grid-template-columns: 1fr; }
     }
   </style>
 </head>
@@ -278,65 +147,30 @@
   <div class="page">
     <div class="layout">
       <div class="column">
-        <section class="card">
-          <h2>Customer Qualification</h2>
-          <div class="grid two">
-            <div class="field">
-              <label>Customer Name</label>
-              <input id="customerName" type="text" value="Alex Morgan" />
-            </div>
-            <div class="field">
-              <label>Phone / Email</label>
-              <input id="contactDetails" type="text" value="(555) 013-2244 · alex.morgan@example.com" />
-            </div>
-            <div class="field">
-              <label>Service Address</label>
-              <input id="address" type="text" value="451 Lakeview Drive, Austin, TX" />
-            </div>
-            <div class="field">
-              <label>Purchase Interest</label>
-              <select id="interest">
-                <option>New mobile plan</option>
-                <option selected>Home internet plan</option>
-                <option>Bundle: mobile + internet</option>
-              </select>
-            </div>
-          </div>
-          <div class="field" style="margin-top: 14px;">
-            <label>Usage Notes</label>
-            <textarea id="usageNotes">Customer works from home, has 4 people in the household, streams in 4K, and wants stable service for video calls. Interested in simple pricing and no surprise fees.</textarea>
-          </div>
-          <div class="tag-row" id="tagsContainer">
-            <div class="tag">Budget conscious</div>
-            <div class="tag">Work from home</div>
-            <div class="tag">Streaming heavy</div>
-            <div class="tag">Interested in bundle savings</div>
-          </div>
-        </section>
 
         <section class="card">
           <h2>Service Availability & Eligibility</h2>
           <div class="availability">
             <div class="availability-item">
               <div>
-                <strong id="availability1Name">Fiber Internet</strong>
-                <div class="subtle" id="availability1Desc">Available at customer address up to 1 Gbps.</div>
+                <strong>Fiber Internet</strong>
+                <div class="subtle">Available at customer address up to 1 Gbps.</div>
               </div>
-              <div class="badge live" id="availability1Status">Available</div>
+              <div class="badge live">Available</div>
             </div>
             <div class="availability-item">
               <div>
-                <strong id="availability2Name">5G Home Internet</strong>
-                <div class="subtle" id="availability2Desc">Coverage supported, speed may vary by indoor signal conditions.</div>
+                <strong>5G Home Internet</strong>
+                <div class="subtle">Coverage supported, speed may vary.</div>
               </div>
-              <div class="badge review" id="availability2Status">Check signal</div>
+              <div class="badge review">Check signal</div>
             </div>
             <div class="availability-item">
               <div>
-                <strong id="availability3Name">Mobile Network</strong>
-                <div class="subtle" id="availability3Desc">Strong 5G coverage in customer ZIP code. Family plan eligible.</div>
+                <strong>Mobile Network</strong>
+                <div class="subtle">Strong 5G coverage.</div>
               </div>
-              <div class="badge live" id="availability3Status">Eligible</div>
+              <div class="badge live">Eligible</div>
             </div>
           </div>
         </section>
@@ -345,155 +179,61 @@
           <h2>Recommended Plans</h2>
           <div class="plans">
             <div class="plan-card">
-              <div class="badge focus" id="plan1Tag">Best fit</div>
-              <h3 id="plan1Name">Fiber Home 500</h3>
-              <div class="plan-price" id="plan1Price">$65/mo</div>
-              <div class="subtle" id="plan1Desc">Recommended for work-from-home households with streaming and multiple connected devices.</div>
-              <ul id="plan1Features">
-                <li>Up to 500 Mbps download speed</li>
-                <li>Unlimited data included</li>
-                <li>Wi-Fi router included</li>
-                <li>Self-install or technician install available</li>
-              </ul>
+              <div class="badge focus">Best fit</div>
+              <h3>AT&T Fiber 500</h3>
+              <div class="plan-price">$65/mo</div>
+              <div class="subtle">Balanced performance for most households.</div>
             </div>
 
             <div class="plan-card">
-              <h3 id="plan2Name">Fiber Home 1 Gig</h3>
-              <div class="plan-price" id="plan2Price">$85/mo</div>
-              <div class="subtle" id="plan2Desc">Ideal for larger households, heavy gaming, and top-tier performance needs.</div>
-              <ul id="plan2Features">
-                <li>Up to 1 Gbps download speed</li>
-                <li>Unlimited data included</li>
-                <li>Advanced router option available</li>
-                <li>Priority install scheduling</li>
-              </ul>
+              <h3>AT&T Fiber 1 Gig</h3>
+              <div class="plan-price">$85/mo</div>
+              <div class="subtle">High performance for heavy usage.</div>
             </div>
 
             <div class="plan-card">
-              <h3 id="plan3Name">Unlimited Mobile Plus</h3>
-              <div class="plan-price" id="plan3Price">$55/mo</div>
-              <div class="subtle" id="plan3Desc">Good add-on recommendation for customers who want bundle savings and hotspot access.</div>
-              <ul id="plan3Features">
-                <li>Unlimited talk, text, and data</li>
-                <li>15 GB hotspot allowance</li>
-                <li>International calling add-on available</li>
-                <li>Bundle discount eligible</li>
-              </ul>
+              <h3>Unlimited Mobile Plan</h3>
+              <div class="plan-price">$30/mo/line</div>
+              <div class="subtle">Unlimited talk, text, and data.</div>
             </div>
-          </div>
-          <div class="actions">
-            <button class="primary-btn">Select Recommended Plan</button>
-            <button class="secondary-btn">Compare Plans</button>
-            <button class="secondary-btn">Apply Bundle Offer</button>
           </div>
         </section>
 
         <section class="card">
-          <h2>Device & Equipment Options</h2>
-          <div class="devices grid two">
+          <h2>Device & Equipment</h2>
+          <div class="devices">
             <div class="device-card">
-              <h3 id="device1Name">Standard Wi-Fi Router</h3>
-              <div class="subtle" id="device1Desc">Included with qualifying fiber plans. Suitable for apartments and medium-sized homes.</div>
+              <h3>Wi-Fi Router Included</h3>
+              <div class="subtle">Standard equipment included.</div>
             </div>
             <div class="device-card">
-              <h3 id="device2Name">Premium Mesh Wi-Fi</h3>
-              <div class="subtle" id="device2Desc">Recommended for larger homes and customers with dead-zone concerns. Additional monthly fee may apply.</div>
-            </div>
-            <div class="device-card">
-              <h3 id="device3Name">Self-Install Kit</h3>
-              <div class="subtle" id="device3Desc">Fastest fulfillment option. Shipped directly to customer with step-by-step setup instructions.</div>
-            </div>
-            <div class="device-card">
-              <h3 id="device4Name">Technician Installation</h3>
-              <div class="subtle" id="device4Desc">Best for customers who prefer setup assistance or need line verification on site.</div>
+              <h3>Professional Installation</h3>
+              <div class="subtle">Optional technician setup.</div>
             </div>
           </div>
         </section>
+
       </div>
 
       <div class="column">
         <section class="card">
           <h2>Pricing Breakdown</h2>
           <div class="summary">
-            <div class="price-row"><span id="price1Label">Fiber Home 500</span><strong id="price1Value">$65.00</strong></div>
-            <div class="price-row"><span id="price2Label">Bundle savings</span><strong id="price2Value">-$10.00</strong></div>
-            <div class="price-row"><span id="price3Label">Router equipment</span><strong id="price3Value">Included</strong></div>
-            <div class="price-row"><span id="price4Label">Installation</span><strong id="price4Value">$0.00 self-install</strong></div>
-            <div class="price-row"><span id="price5Label">Estimated taxes & fees</span><strong id="price5Value">$6.80</strong></div>
-            <div class="price-row total"><span id="monthlyTotalLabel">Estimated monthly total</span><strong id="monthlyTotalValue">$61.80</strong></div>
+            <div class="price-row"><span>Fiber Plan</span><strong>$65.00</strong></div>
+            <div class="price-row"><span>Bundle Savings</span><strong>-$10.00</strong></div>
+            <div class="price-row"><span>Equipment</span><strong>Included</strong></div>
+            <div class="price-row"><span>Installation</span><strong>$0.00</strong></div>
+            <div class="price-row"><span>Taxes & Fees</span><strong>$6.80</strong></div>
+            <div class="price-row total"><span>Total</span><strong>$61.80</strong></div>
           </div>
-          <div class="highlight" style="margin-top: 16px;" id="promotionText">Promotion applied: save $10/month for 12 months when combining home internet with an eligible mobile line.</div>
-        </section>
-
-        <section class="card">
-          <h2>Order Creation & Verification</h2>
-          <div class="grid two">
-            <div class="field">
-              <label>Identity Verification</label>
-              <select id="identityVerification">
-                <option selected>Pending</option>
-                <option>Verified</option>
-              </select>
-            </div>
-            <div class="field">
-              <label>Credit Check</label>
-              <select id="creditCheck">
-                <option selected>Required</option>
-                <option>Not required</option>
-              </select>
-            </div>
-            <div class="field">
-              <label>Install Method</label>
-              <select id="installMethod">
-                <option selected>Self-install</option>
-                <option>Technician visit</option>
-              </select>
-            </div>
-            <div class="field">
-              <label>Preferred Install Date</label>
-              <input id="installDate" type="text" value="Tuesday, April 22" />
-            </div>
-          </div>
-          <div class="actions">
-            <button class="primary-btn">Create Order</button>
-            <button class="secondary-btn">Run Credit Check</button>
-            <button class="secondary-btn">Schedule Install</button>
-          </div>
-        </section>
-
-        <section class="card">
-          <h2>Next Steps for the Customer</h2>
-          <div class="timeline" id="nextStepsContainer">
-            <div class="timeline-item">
-              <strong>Step 1 · Confirm selected plan</strong>
-              <span>Review plan details, monthly estimate, and any equipment choices with the customer.</span>
-            </div>
-            <div class="timeline-item">
-              <strong>Step 2 · Complete verification</strong>
-              <span>Collect required identity and billing details to finalize the order.</span>
-            </div>
-            <div class="timeline-item">
-              <strong>Step 3 · Deliver or install service</strong>
-              <span>Send self-install kit or confirm technician visit window.</span>
-            </div>
-            <div class="timeline-item">
-              <strong>Step 4 · Activation and app setup</strong>
-              <span>Guide the customer through account creation, activation, and service management tools.</span>
-            </div>
+          <div class="highlight" style="margin-top: 16px;">
+            Save when bundling mobile and internet services.
           </div>
         </section>
 
         <section class="card">
           <h2>Sales Notes</h2>
-          <div class="field">
-            <label>Representative Notes</label>
-            <textarea id="salesNotes">Customer values reliability more than top-end speed. Fiber Home 500 is the strongest fit. Good opportunity to position mobile bundle savings after confirming internet plan interest.</textarea>
-          </div>
-          <div class="actions">
-            <button class="primary-btn">Send Quote</button>
-            <button class="secondary-btn">Email Plan Summary</button>
-            <button class="secondary-btn">Save Lead</button>
-          </div>
+          <textarea id="salesNotes" style="width:100%; min-height:120px;"></textarea>
         </section>
       </div>
     </div>
@@ -502,147 +242,22 @@
   <script>
     const params = new URLSearchParams(window.location.search);
 
-    function getParam(name, fallback) {
-      const value = params.get(name);
-      return value !== null && value !== '' ? value : fallback;
-    }
-
-    function setInputValue(id, paramName) {
+    function setText(id, key) {
       const el = document.getElementById(id);
-      const value = params.get(paramName);
-      if (el && value !== null) {
-        el.value = value;
-      }
+      const val = params.get(key);
+      if (el && val) el.textContent = val;
     }
 
-    function setTextValue(id, paramName) {
+    function setValue(id, key) {
       const el = document.getElementById(id);
-      const value = params.get(paramName);
-      if (el && value !== null) {
-        el.textContent = value;
-      }
+      const val = params.get(key);
+      if (el && val) el.value = val;
     }
 
-    function escapeHtml(text) {
-      const div = document.createElement('div');
-      div.textContent = text;
-      return div.innerHTML;
-    }
+    const leadId = params.get('leadId') || 'SL-00000';
+    document.getElementById('leadPill').textContent = `Lead #${leadId} · Sales Consultation`;
 
-    function setListValue(id, paramName) {
-      const el = document.getElementById(id);
-      const value = params.get(paramName);
-      if (!el || !value) return;
-
-      const items = value.split('|').map(item => item.trim()).filter(Boolean);
-      if (!items.length) return;
-
-      el.innerHTML = items.map(item => `<li>${escapeHtml(item)}</li>`).join('');
-    }
-
-    function setTags(paramName) {
-      const el = document.getElementById('tagsContainer');
-      const value = params.get(paramName);
-      if (!el || !value) return;
-
-      const items = value.split('|').map(item => item.trim()).filter(Boolean);
-      if (!items.length) return;
-
-      el.innerHTML = items.map(item => `<div class="tag">${escapeHtml(item)}</div>`).join('');
-    }
-
-    function setTimeline(paramName) {
-      const el = document.getElementById('nextStepsContainer');
-      const value = params.get(paramName);
-      if (!el || !value) return;
-
-      const items = value.split('|').map(item => item.trim()).filter(Boolean);
-      if (!items.length) return;
-
-      el.innerHTML = items.map((item, index) => {
-        const parts = item.split('::');
-        const title = parts[0] ? parts[0].trim() : `Step ${index + 1}`;
-        const description = parts[1] ? parts[1].trim() : '';
-        return `
-          <div class="timeline-item">
-            <strong>${escapeHtml(title)}</strong>
-            <span>${escapeHtml(description)}</span>
-          </div>
-        `;
-      }).join('');
-    }
-
-    function setBadgeValue(id, paramName, defaultClass) {
-      const el = document.getElementById(id);
-      const value = params.get(paramName);
-      if (!el || value === null) return;
-
-      el.textContent = value;
-      el.className = 'badge';
-
-      const normalized = value.toLowerCase();
-      if (normalized.includes('available') || normalized.includes('eligible') || normalized.includes('active') || normalized.includes('verified')) {
-        el.classList.add('live');
-      } else if (normalized.includes('check') || normalized.includes('pending') || normalized.includes('review') || normalized.includes('investigating')) {
-        el.classList.add('review');
-      } else if (normalized.includes('best') || normalized.includes('fit') || normalized.includes('recommended') || normalized.includes('featured')) {
-        el.classList.add('focus');
-      } else {
-        el.classList.add(defaultClass || 'inactive');
-      }
-    }
-
-    const inputParams = [
-      'customerName',
-      'contactDetails',
-      'address',
-      'interest',
-      'usageNotes',
-      'identityVerification',
-      'creditCheck',
-      'installMethod',
-      'installDate',
-      'salesNotes'
-    ];
-
-    inputParams.forEach(name => setInputValue(name, name));
-
-    const textParams = [
-      'availability1Name', 'availability1Desc',
-      'availability2Name', 'availability2Desc',
-      'availability3Name', 'availability3Desc',
-      'plan1Name', 'plan1Price', 'plan1Desc',
-      'plan2Name', 'plan2Price', 'plan2Desc',
-      'plan3Name', 'plan3Price', 'plan3Desc',
-      'device1Name', 'device1Desc',
-      'device2Name', 'device2Desc',
-      'device3Name', 'device3Desc',
-      'device4Name', 'device4Desc',
-      'price1Label', 'price1Value',
-      'price2Label', 'price2Value',
-      'price3Label', 'price3Value',
-      'price4Label', 'price4Value',
-      'price5Label', 'price5Value',
-      'monthlyTotalLabel', 'monthlyTotalValue',
-      'promotionText'
-    ];
-
-    textParams.forEach(name => setTextValue(name, name));
-
-    setListValue('plan1Features', 'plan1Features');
-    setListValue('plan2Features', 'plan2Features');
-    setListValue('plan3Features', 'plan3Features');
-    setTags('tags');
-    setTimeline('nextSteps');
-
-    setBadgeValue('availability1Status', 'availability1Status', 'live');
-    setBadgeValue('availability2Status', 'availability2Status', 'review');
-    setBadgeValue('availability3Status', 'availability3Status', 'live');
-    setBadgeValue('plan1Tag', 'plan1Tag', 'focus');
-
-    const leadId = getParam('leadId', 'SL-20814');
-    const leadStage = getParam('leadStage', 'Sales Consultation');
-    document.getElementById('leadPill').textContent = `Lead #${leadId} · ${leadStage}`;
+    setValue('salesNotes', 'salesNotes');
   </script>
 </body>
 </html>
