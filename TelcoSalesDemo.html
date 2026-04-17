@@ -33,52 +33,52 @@
     .page {
       max-width: 1450px;
       margin: 0 auto;
-      padding: 24px;
+      padding: 10px;
     }
 
     .topbar {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      gap: 16px;
-      margin-bottom: 24px;
+      gap: 8px;
+      margin-bottom: 10px;
     }
 
-    .topbar h1 { margin: 0; font-size: 30px; }
-    .topbar p { margin: 8px 0 0; color: var(--muted); }
+    .topbar h1 { margin: 0; font-size: 22px; }
+    .topbar p { margin: 2px 0 0; color: var(--muted); }
 
     .pill {
       background: var(--primary-soft);
       color: var(--primary);
       border-radius: 999px;
-      padding: 10px 14px;
+      padding: 6px 10px;
       font-weight: bold;
     }
 
     .layout {
       display: grid;
-      grid-template-columns: 1.3fr 0.95fr;
-      gap: 24px;
+      grid-template-columns: 1.22fr 0.95fr;
+      gap: 8px;
     }
 
-    .column { display: grid; gap: 24px; }
+    .column { display: grid; gap: 10px; }
 
     .card {
       background: var(--panel);
       border: 1px solid var(--border);
       border-radius: var(--radius);
       box-shadow: var(--shadow);
-      padding: 20px;
+      padding: 12px;
     }
 
-    .card h2 { margin: 0 0 16px; font-size: 18px; }
+    .card h2 { margin: 0 0 8px; font-size: 18px; }
 
     .availability,
     .plans,
     .devices,
     .summary {
       display: grid;
-      gap: 12px;
+      gap: 8px;
     }
 
     .availability-item,
@@ -86,8 +86,8 @@
     .device-card,
     .price-row {
       border: 1px solid var(--border);
-      border-radius: 14px;
-      padding: 14px;
+      border-radius: 8px;
+      padding: 8px;
       background: #fbfdff;
     }
 
@@ -99,7 +99,7 @@
     }
 
     .badge {
-      padding: 7px 10px;
+      padding: 4px 8px;
       border-radius: 999px;
       font-size: 12px;
       font-weight: bold;
@@ -112,16 +112,16 @@
     .plan-card h3,
     .device-card h3 { margin: 0 0 8px; }
 
-    .plan-price { font-size: 26px; font-weight: bold; }
+    .plan-price { font-size: 20px; font-weight: bold; }
 
-    .subtle { color: var(--muted); font-size: 13px; }
+    .subtle { color: var(--muted); font-size: 12px; }
 
-    .actions { display: flex; gap: 10px; margin-top: 16px; }
+    .actions { display: flex; gap: 10px; margin-top: 8px; }
 
     button {
       border: 0;
-      border-radius: 10px;
-      padding: 11px 14px;
+      border-radius: 8px;
+      padding: 8px 10px;
       font-weight: bold;
       cursor: pointer;
     }
@@ -134,8 +134,8 @@
     .highlight {
       background: linear-gradient(135deg, #eef4ff, #f7f2ff);
       border: 1px solid #d7ddff;
-      border-radius: 14px;
-      padding: 14px;
+      border-radius: 8px;
+      padding: 8px;
     }
 
     @media (max-width: 1024px) {
@@ -229,11 +229,6 @@
           <div class="highlight" style="margin-top: 16px;">
             Save when bundling mobile and internet services.
           </div>
-        </section>
-
-        <section class="card">
-          <h2>Sales Notes</h2>
-          <textarea id="salesNotes" style="width:100%; min-height:120px;"></textarea>
         </section>
       </div>
     </div>
