@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Payment Capture Simulator</title>
+  <style>
+    :root {
+      --bg: #f7f7f8;
+      --card: #ffffff;
+      --text: #1f2937;
+      --muted: #6b7280;
+      --border: #d1d5db;
+      --accent: #111827;
+      --success: #166534;
+      --success-bg: #dcfce7;
+    }
+
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      min-height: 100vh;
+      display: grid;
+      place-items: center;
+      padding: 24px;
+    }
+
+    .panel {
+      width: 100%;
+      max-width: 520px;
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 24px;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+    }
+
+    h1 {
+      font-size: 22px;
+      margin: 0 0 6px;
+    }
+
+    p {
+      margin: 0 0 20px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .field {
+      margin-bottom: 14px;
+    }
+
+    label {
+      display: block;
+      font-size: 13px;
+      margin-bottom: 6px;
+      font-weight: 600;
+    }
+
+    input {
+      width: 100%;
+      padding: 12px 14px;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      font-size: 15px;
+      outline: none;
+      background: #fff;
+    }
+
+    input:focus {
+      border-color: #111827;
+      box-shadow: 0 0 0 3px rgba(17, 24, 39, 0.08);
+    }
+
+    .helper {
+      font-size: 12px;
+      color: var(--muted);
+      margin-top: 4px;
+      text-align: right;
+    }
+
+    .row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+    }
+
+    button {
+      width: 100%;
+      margin-top: 8px;
+      padding: 12px 16px;
+      border: none;
+      border-radius: 8px;
+      background: var(--accent);
+      color: white;
+      font-size: 15px;
+      font-weight: 600;
+      cursor: pointer;
+    }
+
+    button:hover { opacity: 0.95; }
+
+    .message {
+      margin-top: 16px;
+      padding: 12px 14px;
+      border-radius: 8px;
+      display: none;
+      font-size: 14px;
+    }
+
+    .message.success {
+      display: block;
+      background: var(--success-bg);
+      color: var(--success);
+      border: 1px solid #86efac;
+    }
+
+    @media (max-width: 520px) {
+      .row { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <div class="panel">
+    <h1>Payment Capture</h1>
+    <p>Agent-facing simulation for taking a card payment.</p>
+
+    <form id="paymentForm" autocomplete="off">
+      <div class="field">
+        <label for="customerName">Customer Name</label>
+        <input id="customerName" type="text" placeholder="Jane Smith" />
+      </div>
+
+      <div class="field">
+        <label for="cardNumber">Credit Card Number</label>
+        <input id="cardNumber" type="password" inputmode="numeric" placeholder="•••• •••• •••• ••••" maxlength="19" />
+        <div id="cardCounter" class="helper">0 / 16 digits</div>
+      </div>
+
+      <div class="row">
+        <div class="field">
+          <label for="expDate">Expiration Date (MM/YY)</label>
+          <input id="expDate" type="password" inputmode="numeric" placeholder="••/••" maxlength="5" />
+        </div>
+
+        <div class="field">
+          <label for="cvv">CVV</label>
+          <input id="cvv" type="password" inputmode="numeric" placeholder="•••" maxlength="4" />
+        </div>
+      </div>
+
+      <div class="field">
+        <label for="amount">Amount</label>
+        <input id="amount" type="text" inputmode="decimal" placeholder="0.00" />
+      </div>
+
+      <button type="submit">Submit Payment</button>
+      <div id="result" class="message">Payment has been approved.</div>
+    </form>
+  </div>
+
+  <script>
+    const cardNumber = document.getElementById('cardNumber');
+    const expDate = document.getElementById('expDate');
+    const cvv = document.getElementById('cvv');
+    const form = document.getElementById('paymentForm');
+    const result = document.getElementById('result');
+    const cardCounter = document.getElementById('cardCounter');
+
+    function digitsOnly(value) {
+      return value.replace(/\D/g, '');
+    }
+
+    cardNumber.addEventListener('input', () => {
+      const digits = digitsOnly(cardNumber.value).slice(0, 16);
+      cardNumber.value = digits.replace(/(.{4})/g, '$1 ').trim();
+      cardCounter.textContent = digits.length + ' / 16 digits';
+    });
+
+    expDate.addEventListener('input', () => {
+      const digits = digitsOnly(expDate.value).slice(0, 4);
+      if (digits.length >= 3) {
+        expDate.value = digits.slice(0, 2) + '/' + digits.slice(2);
+      } else {
+        expDate.value = digits;
+      }
+    });
+
+    cvv.addEventListener('input', () => {
+      cvv.value = digitsOnly(cvv.value).slice(0, 4);
+    });
+
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+
+      const cardDigits = digitsOnly(cardNumber.value);
+
+      if (cardDigits.length !== 16) {
+        alert('Credit Card Number must be exactly 16 digits.');
+        return;
+      }
+
+      result.textContent = 'Payment has been approved.';
+      result.classList.add('success');
+    });
+  </script>
+</body>
+</html>
